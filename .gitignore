@@ -1,0 +1,23 @@
+# Logs
+logs/
+*.log
+
+# Session data (regenerated per machine)
+agents/*/sessions/
+agents/main/
+
+# Lock files
+*.lock
+
+# Sandbox data
+sandboxes/
+
+# Cache
+*.cache
+
+# Node
+node_modules/
+
+# OS files
+.DS_Store
+/workspace/

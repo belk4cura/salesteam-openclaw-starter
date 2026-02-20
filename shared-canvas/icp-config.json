@@ -1,0 +1,105 @@
+{
+  "product": "Cura Desktop — AI-Powered Desktop Agent with Embedded Coding Agent & Meeting Intelligence",
+  "company": "CuraLabs (Meetngig, Inc.)",
+  "website": "https://www.curalabs.io",
+  "value_proposition": "Cura is a desktop-native AI agent that captures meetings in stealth mode, extracts action items, and then actually executes them — on the user's machine. It has an embedded coding agent that can operate the computer autonomously: running scripts, automating desktop workflows, interacting with local apps and files. Integrations are MCP-based (Model Context Protocol) — Asana, Gmail, Calendar, QuickBooks, and more come built-in, but any MCP server can be added on request, making Cura extensible to virtually any tool a customer uses. Supports auto-approval mode or fully autonomous operation. Your admin team spends 2+ hours/day on post-meeting follow-up — Cura automates 80% of that. At $200-500/mo per seat, it pays for itself in the first week.",
+  "categories": [
+    {
+      "name": "Professional Services",
+      "sub_industries": ["Consulting firms", "Accounting firms (CPA)", "Law firms", "Architecture/Engineering firms"],
+      "why": "Meeting-heavy, admin-heavy. Office managers and EAs handle massive post-meeting task volume. Billable hour culture means time saved = revenue gained.",
+      "admin_density": "High — typically 1 admin per 3-5 professionals"
+    },
+    {
+      "name": "Financial Advisory & Wealth Management",
+      "sub_industries": ["RIAs", "Independent advisors", "Insurance agencies", "Private equity back-office"],
+      "why": "5-10 client meetings/day per advisor. Each generates compliance notes, action items, follow-ups. Paraplanners and CSAs spend hours on post-meeting admin.",
+      "admin_density": "High — CSAs, paraplanners, operations staff"
+    },
+    {
+      "name": "Healthcare & Medical Groups",
+      "sub_industries": ["Multi-physician practices", "Dental groups", "Physical therapy chains", "Behavioral health groups"],
+      "why": "Practice managers, front desk staff, and medical office assistants handle scheduling, referrals, insurance follow-ups — all post-interaction admin on computers.",
+      "admin_density": "Very high — front desk + back office per location"
+    },
+    {
+      "name": "Software & Technology",
+      "sub_industries": ["SaaS companies (50-500 employees)", "Dev agencies", "IT services firms"],
+      "why": "Engineering admins, TPMs, Chiefs of Staff manage sprint meetings, standup follow-ups, cross-team coordination. Mac-first culture, early adopters.",
+      "admin_density": "Medium — EAs, Chiefs of Staff, Program Managers"
+    },
+    {
+      "name": "Real Estate & Property Management",
+      "sub_industries": ["Brokerages", "Property management companies", "Commercial real estate firms"],
+      "why": "Transaction coordinators process 50+ tasks per deal from meeting notes. High admin burden per transaction.",
+      "admin_density": "High — transaction coordinators, office managers"
+    },
+    {
+      "name": "Marketing & Creative Agencies",
+      "sub_industries": ["Digital marketing agencies", "PR firms", "Design studios", "Media agencies"],
+      "why": "Account managers attend client calls then spend hours creating briefs, updating project tools, sending follow-ups.",
+      "admin_density": "Medium — project coordinators, account coordinators"
+    }
+  ],
+  "employee_range": "10-500",
+  "min_admin_staff": 5,
+  "geography": ["United States", "Canada", "United Kingdom", "Australia"],
+  "platform_requirement": "Cross-platform (macOS, Windows, Linux)",
+  "target_titles_budget_holders": [
+    "COO / Chief Operating Officer",
+    "Managing Partner",
+    "VP of Operations",
+    "Director of Operations",
+    "Practice Administrator",
+    "Chief of Staff",
+    "Office Manager (with budget authority)",
+    "Head of Client Services",
+    "VP of Administration"
+  ],
+  "target_titles_end_users": [
+    "Executive Assistant",
+    "Administrative Assistant",
+    "Office Manager",
+    "Practice Manager",
+    "Transaction Coordinator",
+    "Project Coordinator",
+    "Account Coordinator",
+    "Client Service Associate",
+    "Paraplanner",
+    "Medical Office Administrator"
+  ],
+  "disqualifiers": [
+    "Fewer than 5 admin/assistant staff",
+    "Less than 2 years in business",
+    "No web presence",
+    "Government entity (procurement complexity)",
+    "Already a Cura customer",
+    "Fewer than 10 employees total"
+  ],
+  "required_signals": [
+    "Has a website",
+    "Budget holder contactable (email or phone found)",
+    "Uses desktop computers (any OS — macOS, Windows, or Linux)",
+    "Meeting-heavy culture (evidenced by calendar tool usage, meeting tool subscriptions)",
+    "Uses SaaS/productivity tools that have or could have MCP servers (Asana, Monday, ClickUp, Salesforce, HubSpot, Slack, etc.)",
+    "Has administrative/assistant staff roles on LinkedIn"
+  ],
+  "buying_triggers": [
+    "Recently hired new admin staff (scaling pain)",
+    "Job postings for admin/assistant roles (capacity constrained)",
+    "Complaints about meeting overload on social media / Glassdoor",
+    "Currently using Otter.ai, Fireflies, or similar (aware of category but may want more)",
+    "Recent office expansion or new location",
+    "Using multiple SaaS tools (any tools — Cura's MCP architecture means we can integrate with virtually anything)"
+  ],
+  "stage_probabilities": {
+    "suspect": 10,
+    "prospect": 25,
+    "discovery": 40,
+    "proposal": 60,
+    "negotiation": 80,
+    "closed_won": 100,
+    "closed_lost": 0,
+    "frozen": 5
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.9",
+    "lastTouchedAt": "2026-02-11T08:09:24.902Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-11T08:09:24.897Z",
+    "lastRunVersion": "2026.2.9",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "~/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 8,
+      "subagents": {
+        "maxConcurrent": 12
+      },
+      "model": {
+        "primary": "vertex-claude/vertex_ai/claude-opus-4-6"
+      },
+      "heartbeat": {
+        "every": "30m"
+      }
+    },
+    "list": [
+      {
+        "id": "profiler",
+        "name": "Scout",
+        "default": true,
+        "workspace": "~/.openclaw/agents/profiler/workspace",
+        "agentDir": "~/.openclaw/agents/profiler",
+        "model": "vertex-claude/vertex_ai/claude-opus-4-6",
+        "identity": {
+          "name": "Scout",
+          "emoji": "\ud83d\udd0d",
+          "theme": "Market Intelligence Analyst"
+        },
+        "subagents": {
+          "allowAgents": [
+            "offramp"
+          ]
+        },
+        "skills": [
+          "icp-matching",
+          "buyer-identification",
+          "contact-retrieval"
+        ]
+      },
+      {
+        "id": "offramp",
+        "name": "Gatekeeper",
+        "default": false,
+        "workspace": "~/.openclaw/agents/offramp/workspace",
+        "agentDir": "~/.openclaw/agents/offramp",
+        "model": "vertex-claude/vertex_ai/claude-opus-4-6",
+        "identity": {
+          "name": "Gatekeeper",
+          "emoji": "\ud83d\udeaa",
+          "theme": "Outreach Specialist"
+        },
+        "subagents": {
+          "allowAgents": [
+            "strategist",
+            "profiler"
+          ]
+        },
+        "skills": [
+          "two-sentence-outreach",
+          "early-offramp",
+          "inbound-triage"
+        ]
+      },
+      {
+        "id": "strategist",
+        "name": "Mapper",
+        "default": false,
+        "workspace": "~/.openclaw/agents/strategist/workspace",
+        "agentDir": "~/.openclaw/agents/strategist",
+        "model": "vertex-claude/vertex_ai/claude-opus-4-6",
+        "identity": {
+          "name": "Mapper",
+          "emoji": "\ud83d\uddfa\ufe0f",
+          "theme": "Account Strategist"
+        },
+        "subagents": {
+          "allowAgents": [
+            "facilitator"
+          ]
+        },
+        "skills": [
+          "dmu-mapping",
+          "widening-scripts",
+          "reciprocity-planning"
+        ]
+      },
+      {
+        "id": "facilitator",
+        "name": "Closer",
+        "default": false,
+        "workspace": "~/.openclaw/agents/facilitator/workspace",
+        "agentDir": "~/.openclaw/agents/facilitator",
+        "model": "vertex-claude/vertex_ai/claude-opus-4-6",
+        "identity": {
+          "name": "Closer",
+          "emoji": "\u26a1",
+          "theme": "Deal Manager"
+        },
+        "subagents": {
+          "allowAgents": [
+            "economist",
+            "strategist"
+          ]
+        },
+        "skills": [
+          "meeting-prep",
+          "buying-signal-detection",
+          "freezer-management"
+        ]
+      },
+      {
+        "id": "economist",
+        "name": "Ledger",
+        "default": false,
+        "workspace": "~/.openclaw/agents/economist/workspace",
+        "agentDir": "~/.openclaw/agents/economist",
+        "model": "vertex-claude/vertex_ai/claude-opus-4-6",
+        "identity": {
+          "name": "Ledger",
+          "emoji": "\ud83d\udcca",
+          "theme": "Pipeline Forecaster"
+        },
+        "subagents": {
+          "allowAgents": []
+        },
+        "skills": [
+          "coca-calculation",
+          "weighted-pipeline",
+          "conversion-tracking"
+        ]
+      }
+    ]
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "YOUR_TELEGRAM_BOT_TOKEN",
+      "groupPolicy": "allowlist",
+      "streamMode": "partial"
+    },
+    "imessage": {
+      "enabled": true,
+      "cliPath": "imsg",
+      "dmPolicy": "pairing",
+      "groupPolicy": "allowlist"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "YOUR_GATEWAY_AUTH_TOKEN"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "calendar.add",
+        "contacts.add",
+        "reminders.add"
+      ]
+    }
+  },
+  "plugins": {
+    "entries": {
+      "imessage": {
+        "enabled": true
+      },
+      "telegram": {
+        "enabled": true
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "vertex-claude": {
+        "baseUrl": "http://localhost:18321",
+        "apiKey": "sk-local",
+        "auth": "api-key",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "vertex_ai/claude-opus-4-6",
+            "name": "Claude Opus 4.6 Vertex",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 15,
+              "output": 75,
+              "cacheRead": 1.5,
+              "cacheWrite": 18.75
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 32000
+          }
+        ]
+      }
+    }
+  },
+  "tools": {
+    "agentToAgent": {
+      "enabled": true
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "profiler",
+      "match": {
+        "channel": "telegram"
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "providers": {
+    "vertex-claude": {
+      "baseUrl": "http://localhost:18321",
+      "apiKey": "sk-local",
+      "auth": "api-key",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "vertex_ai/claude-opus-4-6",
+          "name": "Claude Opus 4.6 Vertex",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 15,
+            "output": 75,
+            "cacheRead": 1.5,
+            "cacheWrite": 18.75
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 32000
+        }
+      ]
+    }
+  }
+}
