@@ -1,4 +1,4 @@
-#  Sales Agent Team Configuration
+#  Sales Agent Team Open Claw Starter
 
 A 5-agent B2B sales pipeline built on [OpenClaw](https://github.com/open-claw/openclaw), implementing Kent Summers' "Facilitator" methodology. Clone this repo as your `~/.openclaw` directory and follow the setup steps below.
 
